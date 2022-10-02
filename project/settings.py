@@ -23,8 +23,6 @@ import dj_database_url
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
@@ -148,7 +146,7 @@ USE_TZ = True
 # STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-MEDIA_URL='/static/'
+MEDIA_URL = '/staticfiles/'
 django_heroku.settings(locals())
 
 # Default primary key field type
@@ -156,7 +154,7 @@ django_heroku.settings(locals())
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-#configurações de e-mail
+# configurações de e-mail
 #EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 """
