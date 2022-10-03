@@ -50,9 +50,9 @@ def produto(request):
         messages.error(request, 'somente o admin pode ter acesso')
         return redirect('index')
     
-def editar(request):
-    messages.error(request, 'somente o admin pode ter acesso')
-    return redirect('index')
+# def editar(request):
+#     messages.error(request, 'somente o admin pode ter acesso')
+#     return redirect('index')
 
 
   #10 years later :( kkk
