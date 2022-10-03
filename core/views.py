@@ -52,7 +52,7 @@ def produto(request):
     
 def editar(request):
     messages.error(request, 'somente o admin pode ter acesso')
-    pass
+    return redirect('index')
 
 
   #10 years later :( kkk
