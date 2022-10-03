@@ -14,19 +14,23 @@ def index(request):
     return render(request, 'index.html', context)
 
 def contato(request):
-    form = ContatoForm(request.POST or None)
-    if str(request.method)=='POST':
-        
-        if form.is_valid():
-            form.send_mail()
-            messages.success(request, 'E-mail enviado com sucesso, logo entrarei em contato com vc :)')
+    if str(request.user) != 'AnonymousUser':
+        form = ContatoForm(request.POST or None)
+        if str(request.method)=='POST':
             
-            form = ContatoForm()
-            
-        else:      
-            print(form.errors.as_data())    
-            messages.error(request, 'E-mail não enviado')
-            
+            if form.is_valid():
+                form.send_mail()
+                messages.success(request, 'E-mail enviado com sucesso, logo entrarei em contato com vc :)')
+                
+                form = ContatoForm()
+                
+            else:      
+                print(form.errors.as_data())    
+                messages.error(request, 'E-mail não enviado')
+    
+    else:
+        messages.error(request, 'somente o admin pode ter acesso')
+        return redirect('index')
               
     context = {'form': form}
     return render(request, 'contato.html', context)
