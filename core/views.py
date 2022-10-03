@@ -47,9 +47,12 @@ def produto(request):
                 
         return render(request, 'produto.html', context)
     else:
-        messages.error(request, 'voce não tem permissao')
+        messages.error(request, 'somente o admin pode ter acesso')
         return redirect('index')
     
-    
+def editar(request):
+    messages.error(request, 'somente o admin pode ter acesso')
+    pass
+
 
   #10 years later :( kkk

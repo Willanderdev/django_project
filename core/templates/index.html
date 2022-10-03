@@ -47,6 +47,7 @@
                     <td><a href="#modal{{i.id}}" data-toggle="modal">{{i.nome}}</a></td>
                     <td>{{i.preco}}</td>
                     <td>{{i.estoque}}</td>
+                    <td><a class="nav-item nav-link" href="{% url 'editar' %}">Edit</a></td>
                 </tr>
 
                 <div class="modal fade bdéxample-modal-lg show" id="modal{{i.id}}" tabindex="-1" role="dialog">
