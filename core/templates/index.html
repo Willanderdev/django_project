@@ -1,6 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,13 +24,13 @@
                     <li><a class="nav-item nav-link" href="{% url 'contato' %}">Contato</a></li>
                 </ul>
             </div>
-    
+
         </nav>
         <br><br>
         <div>
             <h1>Controle de Estoque</h1>
         </div>
-            <br><br>
+        <br><br>
         <table class="table">
             <thead class="thead-light">
                 <tr>
@@ -47,7 +48,7 @@
                     <td><a href="#modal{{i.id}}" data-toggle="modal">{{i.nome}}</a></td>
                     <td>{{i.preco}}</td>
                     <td>{{i.estoque}}</td>
-                    <td><a class="nav-item nav-link" href="{% url 'editar' %}">Edit</a></td>
+                    <td><a href="{% url 'editar' %}">Edit</a></td>
                 </tr>
 
                 <div class="modal fade bdéxample-modal-lg show" id="modal{{i.id}}" tabindex="-1" role="dialog">
@@ -68,13 +69,13 @@
                 {%endfor%}
             </tbody>
         </table>
-            {% if messages %}
-            {%for message in messages %}
-            <div class="alert alert-primary" role="alert">
-                {{message}}
-            </div>
-            {%endfor%}
-            {% endif %}
+        {% if messages %}
+        {%for message in messages %}
+        <div class="alert alert-primary" role="alert">
+            {{message}}
+        </div>
+        {%endfor%}
+        {% endif %}
     </div>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
