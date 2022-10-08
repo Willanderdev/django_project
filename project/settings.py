@@ -31,7 +31,7 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 SECRET_KEY = 'django-insecure-z26g$o0bbwpu%1dknz9y+1-nbe6(3m6^b=n9&b450(b2+%q93)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -146,12 +146,13 @@ USE_TZ = True
 
 # STATIC_URL = '/static/'
 
+STATICFILES_DIRS = [BASE_DIR / "static", 'C:\Django2\core\static\images',]
 
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
+MEDIA_URL = 'media/'
 django_heroku.settings(locals())
 
 # Default primary key field type
